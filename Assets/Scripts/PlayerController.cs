@@ -23,15 +23,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-
-        _targetVelocity = new Vector2(moveX, moveY) * _swimSpeed;
+        GetInput();
     }
 
     void FixedUpdate()
     {
-        // Плавное движение
+        MovePlayer();
+    }
+
+    private void MovePlayer()
+    {
+         // Плавное движение
         _rb.velocity = Vector2.Lerp(_rb.velocity, _targetVelocity, _acceleration * Time.fixedDeltaTime);
 
         // Поворот в сторону движения
@@ -61,5 +63,13 @@ public class PlayerController : MonoBehaviour
             _bobbingTimer = 0f;
             _baseY = transform.localPosition.y;
         }
+    }
+
+    private void GetInput()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+
+        _targetVelocity = new Vector2(moveX, moveY) * _swimSpeed;
     }
 }
