@@ -12,6 +12,7 @@ public class UpgradeTrigger : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money")+PlayerPrefs.GetInt("moneySession"));
         SceneManager.LoadScene("Upgrade");
     }
     // Update is called once per frame

@@ -14,7 +14,7 @@ public class Fish : MonoBehaviour
     {
       //  if (collision.gameObject.CompareTag("Player") == true)
         {
-            PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money") + Fish_Money_Add);
+            PlayerPrefs.SetInt("moneySession", PlayerPrefs.GetInt("moneySession") + Fish_Money_Add);
             Destroy(gameObject);
         }
     }
