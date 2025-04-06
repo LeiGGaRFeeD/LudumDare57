@@ -3,21 +3,27 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _swimSpeed = 3f, _waterDrag = 2f, _acceleration = 5f;
+    // Заменяем сериализованное поле на ссылку к ScriptableObject
+    [SerializeField] private SwimSpeedSettings _speedSettings;
+
+    [SerializeField] private float _waterDrag = 2f, _acceleration = 5f;
     [SerializeField] private float _rotationSpeed = 300f, _bobbingAmplitude = 0.1f, _bobbingFrequency = 1.5f;
 
+    private float _swimSpeed; // Теперь не сериализуем
     private Rigidbody2D _rb;
     private Vector2 _targetVelocity;
     private float _baseY, _bobbingTimer;
     private Vector3 _defaultScale;
-
     void Start()
     {
+        // Инициализация скорости из сохраненных данных
+        int speedLevel = PlayerPrefs.GetInt("speedLVL", 1);
+        _swimSpeed = _speedSettings.GetSwimSpeed(speedLevel);
+
         _rb = GetComponent<Rigidbody2D>();
         _rb.gravityScale = 0f;
         _rb.drag = _waterDrag;
         _baseY = transform.localPosition.y;
-
         _defaultScale = transform.localScale;
     }
 
