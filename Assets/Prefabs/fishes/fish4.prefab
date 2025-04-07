@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1926021945373999842}
   - component: {fileID: -4482722612314264686}
   - component: {fileID: 5781289963064606524}
+  - component: {fileID: -5584508121118212995}
   m_Layer: 0
   m_Name: fish4
   m_TagString: Untagged
@@ -98,3 +99,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5584508121118212995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6284653712410949815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2939b3d441f43e58e0dbbd9a7e195b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsToSpawn: []
+  spawnAreaWidth: 10
+  spawnAreaHeight: 10
+  checkRadius: 1
+  maxAttempts: 30
+  autoSpawn: 1
+  spawnInterval: 2
+  maxSpawnedObjects: 10

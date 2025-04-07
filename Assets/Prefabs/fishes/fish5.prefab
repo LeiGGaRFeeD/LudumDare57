@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6910712176255338960}
   - component: {fileID: -8637413662640027747}
   - component: {fileID: -3693581563075706111}
+  - component: {fileID: -6024942664076116967}
   m_Layer: 0
   m_Name: fish5
   m_TagString: Untagged
@@ -98,3 +99,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Fish_Money_Add: 50
+--- !u!114 &-6024942664076116967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825955096718292071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2939b3d441f43e58e0dbbd9a7e195b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabsToSpawn: []
+  spawnAreaWidth: 10
+  spawnAreaHeight: 10
+  checkRadius: 1
+  maxAttempts: 30
+  autoSpawn: 1
+  spawnInterval: 2
+  maxSpawnedObjects: 10
